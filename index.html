@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Guia de Instalação</title>
-<meta name="description" content="Guia passo a passo para instalar as ferramentas dos eventos da Expert Integrado: Claude, Claude Desktop, Codex (ChatGPT), Lovable e Voice AI.">
+<meta name="description" content="Guia passo a passo para instalar as ferramentas dos eventos da Expert Integrado: Claude ou Codex (ChatGPT), Claude Desktop ou app do Codex, e Voice AI.">
 <meta name="author" content="Expert Integrado">
 <meta name="theme-color" content="#050505">
 <meta property="og:type" content="website">
@@ -129,10 +129,9 @@ code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.85em
 
 /* Rota (mapa das etapas) */
 #menu { max-width: 1080px; margin: 0 auto; padding: 1.5rem 16px 3.5rem; }
-.route { display: grid; grid-template-columns: 3fr 2fr 1fr; gap: 14px; align-items: stretch; }
+.route { display: grid; grid-template-columns: 1fr; gap: 14px; align-items: stretch; }
 .lane { border-radius: 18px; padding: 14px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .lane-required { background: var(--primary-soft); border: 1px solid var(--primary-line); }
-.lane-other { border: 1px dashed var(--outline-strong); }
 .lane-head { display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; padding: 0 4px; }
 .lane-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
 .lane-required .lane-label { color: var(--primary); }
@@ -145,7 +144,6 @@ code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.85em
 }
 .stop:hover { border-color: var(--primary-line); transform: translateY(-2px); }
 .stop-n { font-family: "Bebas Neue", sans-serif; font-size: 2.4rem; line-height: 0.9; color: var(--primary); }
-.lane-other .stop-n { color: var(--muted); }
 .stop-title { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800; font-size: 1.02rem; line-height: 1.25; letter-spacing: -0.01em; }
 .stop-body { display: flex; flex-direction: column; gap: 3px; }
 .stop-sub { font-size: 0.85rem; color: var(--muted); line-height: 1.45; }
@@ -153,18 +151,6 @@ code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.85em
 .tag { font-size: 0.72rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--surface-highest); color: var(--muted); white-space: nowrap; }
 .tag-free { color: var(--green); background: var(--green-soft); }
 
-.fork {
-  margin-top: 14px; display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 16px;
-  border: 1px dashed var(--outline-strong); color: var(--text); text-decoration: none; background: var(--surface-low);
-  transition: border-color .2s ease;
-}
-.fork:hover { border-color: var(--primary-line); }
-.fork-icon { flex-shrink: 0; width: 40px; height: 40px; border-radius: 12px; background: var(--surface-highest); display: grid; place-items: center; color: var(--primary); }
-.fork-icon svg { width: 22px; height: 22px; }
-.fork-text { flex: 1; min-width: 0; }
-.fork-text strong { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800; display: block; }
-.fork-text span { color: var(--muted); font-size: 0.9rem; }
-.fork-arrow { color: var(--primary); font-weight: 700; flex-shrink: 0; }
 
 @media (max-width: 860px) {
   .route { grid-template-columns: 1fr; }
@@ -185,12 +171,10 @@ code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.85em
 .section-label { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; }
 .section-label .tag { font-size: 0.74rem; }
 .tag-req { background: var(--primary-soft); color: var(--primary); border: 1px solid var(--primary-line); }
-.tag-alt { background: transparent; color: var(--text); border: 1px dashed var(--outline-strong); }
 .step-section h2 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); line-height: 1.1; margin: 0 0 1.1rem; }
 .step-section h3 { font-size: 1.1rem; margin: 2rem 0 0.75rem; }
 .lead { font-size: 1.08rem; }
 .muted { color: var(--muted); }
-.alt-section { background: var(--surface-low); }
 
 @media (max-width: 760px) {
   .step-inner { grid-template-columns: 1fr; padding-top: 2.5rem; }
@@ -223,10 +207,6 @@ code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.85em
 .callout-ok .callout-title::before { content: "✓ "; }
 .callout ol { padding-left: 1.25rem; margin: 0.4rem 0 0; }
 
-.fork-inline { display: flex; gap: 12px; align-items: center; text-decoration: none; color: var(--text); border: 1px dashed var(--outline-strong); border-radius: 14px; padding: 0.85rem 1.1rem; margin: 1.1rem 0; background: var(--surface); }
-.fork-inline:hover { border-color: var(--primary-line); }
-.fork-inline span { flex: 1; font-size: 0.95rem; }
-.fork-inline b { color: var(--primary); }
 
 /* Tabs */
 .tabs { display: inline-flex; flex-wrap: wrap; background: var(--surface-high); border: 1px solid var(--outline); border-radius: 12px; padding: 4px; margin: 0.25rem 0 1rem; gap: 4px; max-width: 100%; }
@@ -237,6 +217,7 @@ code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.85em
 .tab.active { background: var(--primary); color: #fff; }
 .tab-panel[hidden] { display: none; }
 .tabs-big { display: flex; width: 100%; }
+#codex { scroll-margin-top: 90px; }
 .tabs-big .tab { flex: 1; padding: 0.7rem 0.9rem; font-size: 0.95rem; }
 
 /* Código */
@@ -284,39 +265,21 @@ ul.plain li { margin: 0.3rem 0; }
 <section class="hero">
   <span class="eyebrow">Expert Integrado · Eventos</span>
   <h1>Guia de Instalação<span class="dot">.</span></h1>
-  <p>Siga na ordem. <strong>As etapas 1 a 3 são o mínimo para participar</strong> do evento; as outras você pode fazer depois, com calma.</p>
+  <p>Siga na ordem. <strong>As 4 etapas são o mínimo para participar</strong> do evento e levam cerca de 30 minutos no total.</p>
 </section>
 
 <section id="menu" aria-label="Mapa das etapas">
   <div class="route">
     <div class="lane lane-required">
       <div class="lane-head"><span class="lane-label">Obrigatório</span><span class="lane-note">antes do evento</span></div>
-      <div class="lane-cards" style="--cols:3">
-        <a href="#claude-pro" class="stop"><span class="stop-n">1</span><span class="stop-body"><span class="stop-title">Contratação do Claude</span><span class="stop-sub">A IA principal do dia</span></span><span class="stop-meta"><span class="tag">5 min</span><span class="tag">~R$ 90/mês</span></span></a>
+      <div class="lane-cards" style="--cols:4">
+        <a href="#claude-pro" class="stop"><span class="stop-n">1</span><span class="stop-body"><span class="stop-title">Contratação do Claude ou do Codex</span><span class="stop-sub">A IA principal do dia</span></span><span class="stop-meta"><span class="tag">5 min</span><span class="tag">~US$ 20/mês</span></span></a>
         <a href="#preparo" class="stop"><span class="stop-n">2</span><span class="stop-body"><span class="stop-title">Preparar o Computador</span><span class="stop-sub">Git e Node.js</span></span><span class="stop-meta"><span class="tag">10 min</span><span class="tag tag-free">Gratuito</span></span></a>
-        <a href="#claude-desktop" class="stop"><span class="stop-n">3</span><span class="stop-body"><span class="stop-title">Claude Desktop</span><span class="stop-sub">App com o Claude Code dentro</span></span><span class="stop-meta"><span class="tag">5 min</span><span class="tag tag-free">Gratuito</span></span></a>
-      </div>
-    </div>
-    <div class="lane lane-other">
-      <div class="lane-head"><span class="lane-label">Recomendado</span></div>
-      <div class="lane-cards" style="--cols:2">
-        <a href="#lovable" class="stop"><span class="stop-n">4</span><span class="stop-body"><span class="stop-title">Lovable</span><span class="stop-sub">Criar apps sem programar</span></span><span class="stop-meta"><span class="tag">5 min</span><span class="tag">US$ 25/mês</span></span></a>
-        <a href="#voice-ai" class="stop"><span class="stop-n">5</span><span class="stop-body"><span class="stop-title">Voice AI</span><span class="stop-sub">Falar em vez de digitar</span></span><span class="stop-meta"><span class="tag">5 min</span><span class="tag tag-free">Gratuito</span></span></a>
-      </div>
-    </div>
-    <div class="lane lane-other">
-      <div class="lane-head"><span class="lane-label">Opcional</span></div>
-      <div class="lane-cards">
-        <a href="#claude-code" class="stop"><span class="stop-n">6</span><span class="stop-body"><span class="stop-title">Terminal</span><span class="stop-sub">Só para quem já usa</span></span><span class="stop-meta"><span class="tag">10 min</span></span></a>
+        <a href="#claude-desktop" class="stop"><span class="stop-n">3</span><span class="stop-body"><span class="stop-title">Claude Desktop ou app do Codex</span><span class="stop-sub">O app onde você vai trabalhar</span></span><span class="stop-meta"><span class="tag">5 min</span><span class="tag tag-free">Gratuito</span></span></a>
+        <a href="#voice-ai" class="stop"><span class="stop-n">4</span><span class="stop-body"><span class="stop-title">Voice AI</span><span class="stop-sub">Falar em vez de digitar</span></span><span class="stop-meta"><span class="tag">5 min</span><span class="tag tag-free">Gratuito</span></span></a>
       </div>
     </div>
   </div>
-
-  <a href="#codex" class="fork">
-    <span class="fork-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="8" r="2"/><path d="M6 7v10"/><path d="M18 10c0 4-6 3-12 7"/></svg></span>
-    <span class="fork-text"><strong>Prefere o ChatGPT? Use o Codex</strong><span>Caminho alternativo às etapas 1 e 3 para quem já assina o ChatGPT.</span></span>
-    <span class="fork-arrow" aria-hidden="true">→</span>
-  </a>
 </section>
 
 <!-- Etapa 1 -->
@@ -324,34 +287,66 @@ ul.plain li { margin: 0.3rem 0; }
   <div class="step-inner">
     <div class="step-aside"><div class="big-n" aria-hidden="true">1</div></div>
     <div class="step-main">
-      <div class="section-label"><span class="tag tag-req">Etapa 1 · Obrigatório</span><span class="tag">~R$ 90/mês</span></div>
-      <h2>Contratação do Claude</h2>
-      <p class="lead">O Claude é a IA da Anthropic que você vai usar o dia inteiro: para conversar, gerar conteúdo, analisar planilhas, montar processos e construir o seu assistente com memória da empresa.</p>
+      <div class="section-label"><span class="tag tag-req">Etapa 1 · Obrigatório</span><span class="tag">Plano pago</span></div>
+      <h2>Contratação do Claude ou do Codex</h2>
+      <p class="lead">Você vai precisar de uma IA para usar o dia inteiro: conversar, gerar conteúdo, analisar planilhas, montar processos e construir o seu assistente com memória da empresa. Escolha <strong>um</strong> dos dois caminhos.</p>
 
-      <div class="callout callout-tip">
-        <span class="callout-title">Qual plano contratar?</span>
-        <strong>Pro (~US$ 20/mês)</strong> é o recomendado. Atende o dia inteiro, libera o Claude Code e tem limite de uso suficiente. O <em>Free</em> tem limite muito baixo, e o <em>Max</em> só vale se você usa muito no dia a dia.
+      <div class="tabs tabs-big" id="codex" data-tabs="ia" role="tablist">
+        <button class="tab active" data-tab="claude" type="button">Claude</button>
+        <button class="tab" data-tab="codex" type="button">ChatGPT (Codex)</button>
       </div>
 
-      <h3>Como contratar</h3>
-      <ol class="steps">
-        <li><span class="t">Acesse claude.ai</span><span class="d">Abra <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">claude.ai</a> no navegador.</span></li>
-        <li><span class="t">Crie sua conta</span><span class="d">Use o e-mail principal da empresa.</span></li>
-        <li><span class="t">Faça login e abra Settings</span><span class="d">Clique no seu nome no canto inferior esquerdo → <strong>Settings</strong> → <strong>Plans</strong>.</span></li>
-        <li><span class="t">Selecione o plano Pro</span><span class="d">Finalize com cartão de crédito.</span></li>
-      </ol>
+      <div class="tab-panel" data-panel="ia:claude">
+        <p>O <strong>Claude</strong>, da Anthropic, é a IA com que o evento é conduzido. Se você ainda não assina nenhuma IA, vá por aqui.</p>
 
-      <div class="callout callout-warn">
-        <span class="callout-title">Pagamento em dólar</span>
-        O valor cai no cartão como compra internacional (com IOF e câmbio do dia). Você pode cancelar a qualquer momento, sem multa.
+        <div class="callout callout-tip">
+          <span class="callout-title">Qual plano contratar?</span>
+          <strong>Pro (~US$ 20/mês, cerca de R$ 90)</strong> é o recomendado. Atende o dia inteiro, libera o Claude Code e tem limite de uso suficiente. O <em>Free</em> tem limite muito baixo, e o <em>Max</em> só vale se você usa muito no dia a dia.
+        </div>
+
+        <h3>Como contratar</h3>
+        <ol class="steps">
+          <li><span class="t">Acesse claude.ai</span><span class="d">Abra <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">claude.ai</a> no navegador.</span></li>
+          <li><span class="t">Crie sua conta</span><span class="d">Use o e-mail principal da empresa.</span></li>
+          <li><span class="t">Faça login e abra Settings</span><span class="d">Clique no seu nome no canto inferior esquerdo → <strong>Settings</strong> → <strong>Plans</strong>.</span></li>
+          <li><span class="t">Selecione o plano Pro</span><span class="d">Finalize com cartão de crédito.</span></li>
+        </ol>
+
+        <div class="callout callout-warn">
+          <span class="callout-title">Pagamento em dólar</span>
+          O valor cai no cartão como compra internacional (com IOF e câmbio do dia). Você pode cancelar a qualquer momento, sem multa.
+        </div>
+
+        <div class="callout callout-ok">
+          <span class="callout-title">Pronto quando</span>
+          Você entra em <strong>claude.ai</strong>, faz login, e o selo ao lado do seu nome mostra <strong>Pro</strong>.
+        </div>
       </div>
 
-      <div class="callout callout-ok">
-        <span class="callout-title">Pronto quando</span>
-        Você entra em <strong>claude.ai</strong>, faz login, e o selo ao lado do seu nome mostra <strong>Pro</strong>.
-      </div>
+      <div class="tab-panel" data-panel="ia:codex" hidden>
+        <p>O <strong>Codex</strong> é o agente da OpenAI que faz o mesmo papel do Claude Code: trabalha dentro de uma pasta do seu computador, lê arquivos e executa tarefas. Ele vem incluído no plano do ChatGPT.</p>
 
-      <a class="fork-inline" href="#codex"><span>Já assina o ChatGPT e prefere usar ele? <b>Veja o caminho com o Codex</b></span><span aria-hidden="true">→</span></a>
+        <div class="callout callout-warn">
+          <span class="callout-title">Antes de escolher este caminho</span>
+          O evento é conduzido com o <strong>Claude</strong>. Use o Codex se você já assina o ChatGPT e prefere ficar nele.
+        </div>
+
+        <div class="callout callout-tip">
+          <span class="callout-title">Qual plano contratar?</span>
+          O Codex vem nos planos do ChatGPT, inclusive no gratuito, mas no <em>Free</em> e no <em>Go</em> o uso é mais limitado. Para acompanhar o dia inteiro, use o <strong>Plus</strong> ou superior.
+        </div>
+
+        <h3>Como contratar</h3>
+        <ol class="steps">
+          <li><span class="t">Acesse chatgpt.com e faça login</span><span class="d"><a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">chatgpt.com</a>. Se ainda não tem conta, crie com o e-mail principal da empresa.</span></li>
+          <li><span class="t">Confira ou contrate o plano</span><span class="d">Veja os planos e valores em <a href="https://chatgpt.com/pricing" target="_blank" rel="noopener noreferrer">chatgpt.com/pricing</a>.</span></li>
+        </ol>
+
+        <div class="callout callout-ok">
+          <span class="callout-title">Pronto quando</span>
+          Você entra em <strong>chatgpt.com</strong>, faz login, e o seu plano aparece como <strong>Plus</strong> (ou superior) nas configurações.
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -363,7 +358,7 @@ ul.plain li { margin: 0.3rem 0; }
     <div class="step-main">
       <div class="section-label"><span class="tag tag-req">Etapa 2 · Obrigatório</span><span class="tag tag-free">Gratuito</span></div>
       <h2>Preparar o Computador</h2>
-      <p class="lead">Antes de instalar o Claude Desktop, instale duas ferramentas de apoio gratuitas: o <strong>Git</strong> e o <strong>Node.js</strong>. Leva cerca de 10 minutos e evita travas durante o evento.</p>
+      <p class="lead">Antes de instalar o app da etapa 3, instale duas ferramentas de apoio gratuitas: o <strong>Git</strong> e o <strong>Node.js</strong>. Leva cerca de 10 minutos e evita travas durante o evento.</p>
 
       <div class="callout callout-tip">
         <span class="callout-title">Por que preciso disso?</span>
@@ -434,162 +429,115 @@ ul.plain li { margin: 0.3rem 0; }
     <div class="step-aside"><div class="big-n" aria-hidden="true">3</div></div>
     <div class="step-main">
       <div class="section-label"><span class="tag tag-req">Etapa 3 · Obrigatório</span><span class="tag tag-free">Gratuito</span></div>
-      <h2>Claude Desktop</h2>
-      <p class="lead">O aplicativo oficial da Anthropic para Mac e Windows. Já vem com o <strong>Claude Code</strong> numa aba própria: você não precisa abrir terminal para nada.</p>
+      <h2>Claude Desktop ou app do Codex</h2>
+      <p class="lead">Instale o aplicativo do caminho que você escolheu na etapa 1. É nele que você vai trabalhar durante o evento, sem precisar digitar comandos.</p>
 
-      <div class="callout callout-tip">
-        <span class="callout-title">Esse é o caminho principal</span>
-        Se você não programa, é por aqui que você vai.
+      <div class="tabs tabs-big" data-tabs="ia" role="tablist">
+        <button class="tab active" data-tab="claude" type="button">Claude Desktop</button>
+        <button class="tab" data-tab="codex" type="button">App do Codex</button>
       </div>
 
-      <h3>Como instalar</h3>
-      <div class="tabs" data-tabs="desktop" role="tablist">
-        <button class="tab active" data-tab="win" type="button">Windows</button>
-        <button class="tab" data-tab="mac" type="button">Mac</button>
-      </div>
+      <div class="tab-panel" data-panel="ia:claude">
+        <p>O aplicativo oficial da Anthropic para Mac e Windows. Já vem com o <strong>Claude Code</strong> numa aba própria.</p>
 
-      <div class="tab-panel" data-panel="desktop:win">
-        <ol class="steps">
-          <li><span class="t">Acesse claude.ai/download</span><span class="d"><a href="https://claude.ai/download" target="_blank" rel="noopener noreferrer">claude.ai/download</a></span></li>
-          <li><span class="t">Baixe a versão para Windows</span></li>
-          <li><span class="t">Execute o instalador (.exe)</span></li>
-          <li><span class="t">Siga as etapas e abra o app</span></li>
-        </ol>
-      </div>
-
-      <div class="tab-panel" data-panel="desktop:mac" hidden>
-        <ol class="steps">
-          <li><span class="t">Acesse claude.ai/download</span><span class="d"><a href="https://claude.ai/download" target="_blank" rel="noopener noreferrer">claude.ai/download</a></span></li>
-          <li><span class="t">Baixe a versão para macOS</span></li>
-          <li><span class="t">Abra o arquivo .dmg baixado</span></li>
-          <li><span class="t">Arraste o ícone do Claude para a pasta Aplicativos</span></li>
-          <li><span class="t">Abra o app</span></li>
-        </ol>
-      </div>
-
-      <h3>Login com link de verificação</h3>
-      <p>Na primeira vez que abrir o app, faça login com a mesma conta do Claude Pro.</p>
-
-      <div class="callout callout-warn">
-        <span class="callout-title">Confira o seu e-mail</span>
-        O Claude manda um <strong>link de verificação para o seu e-mail</strong> para validar o login. Abra o e-mail (no mesmo computador onde instalou o app) e clique no link. Sem isso, o login não termina. Não chegou em 1 ou 2 minutos? Confira a caixa de spam.
-      </div>
-
-      <div class="callout callout-ok">
-        <span class="callout-title">Pronto quando</span>
-        O app abre, você está logado e vê as abas no topo: <strong>Início</strong> e <strong>Code</strong>.
-      </div>
-
-      <div class="callout callout-tip">
-        <span class="callout-title">Travou? Consulte o Playbook Claude</span>
-        A Expert mantém uma base de soluções para os problemas mais comuns do Claude: <a href="https://playbookclaude.expertintegrado.com.br" target="_blank" rel="noopener noreferrer"><strong>playbookclaude.expertintegrado.com.br</strong></a>.
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Alternativa: Codex -->
-<section id="codex" class="step-section alt-section">
-  <div class="step-inner">
-    <div class="step-aside"><div class="big-n alt" aria-hidden="true">ALT</div></div>
-    <div class="step-main">
-      <div class="section-label"><span class="tag tag-alt">Alternativa às etapas 1 e 3</span><span class="tag">Incluso no ChatGPT</span></div>
-      <h2>Prefere o ChatGPT? Use o Codex</h2>
-      <p class="lead">O <strong>Codex</strong> é o agente da OpenAI que faz o mesmo papel do Claude Code: trabalha dentro de uma pasta do seu computador, lê arquivos e executa tarefas. Ele vem dentro do aplicativo do ChatGPT para computador.</p>
-
-      <div class="callout callout-warn">
-        <span class="callout-title">Antes de escolher este caminho</span>
-        O evento é conduzido com o <strong>Claude</strong>. Use o Codex se você já assina o ChatGPT e prefere ficar nele. A <strong>etapa 2 (Preparar o Computador) continua obrigatória</strong> nos dois caminhos.
-      </div>
-
-      <h3>1. Plano do ChatGPT</h3>
-      <p>O Codex vem incluído nos planos do ChatGPT, inclusive no gratuito, mas no <em>Free</em> e no <em>Go</em> o uso é mais limitado. Para acompanhar o dia inteiro, use o <strong>Plus</strong> ou superior.</p>
-      <ol class="steps">
-        <li><span class="t">Acesse chatgpt.com e faça login</span><span class="d"><a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">chatgpt.com</a>. Se ainda não tem conta, crie com o e-mail principal da empresa.</span></li>
-        <li><span class="t">Confira ou contrate o plano</span><span class="d">Veja os planos e valores em <a href="https://chatgpt.com/pricing" target="_blank" rel="noopener noreferrer">chatgpt.com/pricing</a>.</span></li>
-      </ol>
-
-      <h3>2. Instalar o app</h3>
-      <div class="tabs" data-tabs="codexapp" role="tablist">
-        <button class="tab active" data-tab="win" type="button">Windows</button>
-        <button class="tab" data-tab="mac" type="button">Mac</button>
-      </div>
-
-      <div class="tab-panel" data-panel="codexapp:win">
-        <ol class="steps">
-          <li><span class="t">Baixe pela Microsoft Store</span><span class="d"><a href="https://get.microsoft.com/installer/download/9PLM9XGG6VKS?cid=website_cta_psi" target="_blank" rel="noopener noreferrer">Baixar o app para Windows</a> (link oficial da OpenAI, abre a Microsoft Store).</span></li>
-          <li><span class="t">Instale e abra o app</span><span class="d">Siga as telas da Store até concluir.</span></li>
-        </ol>
-        <div class="callout">
-          <span class="callout-title">Cuidado com apps parecidos na Store</span>
-          Procurar "Codex" direto na Store pode mostrar apps de outras empresas. Use o link acima.
+        <h3>Como instalar</h3>
+        <div class="tabs" data-tabs="desktop" role="tablist">
+          <button class="tab active" data-tab="win" type="button">Windows</button>
+          <button class="tab" data-tab="mac" type="button">Mac</button>
         </div>
-      </div>
 
-      <div class="tab-panel" data-panel="codexapp:mac" hidden>
-        <ol class="steps">
-          <li><span class="t">Baixe o app para Mac</span><span class="d"><a href="https://persistent.oaistatic.com/codex-app-prod/Codex.dmg">Baixar Codex.dmg</a> (link oficial da OpenAI).</span></li>
-          <li><span class="t">Abra o arquivo .dmg baixado</span></li>
-          <li><span class="t">Arraste o ícone para a pasta Aplicativos e abra o app</span></li>
-        </ol>
+        <div class="tab-panel" data-panel="desktop:win">
+          <ol class="steps">
+            <li><span class="t">Acesse claude.ai/download</span><span class="d"><a href="https://claude.ai/download" target="_blank" rel="noopener noreferrer">claude.ai/download</a></span></li>
+            <li><span class="t">Baixe a versão para Windows</span></li>
+            <li><span class="t">Execute o instalador (.exe)</span></li>
+            <li><span class="t">Siga as etapas e abra o app</span></li>
+          </ol>
+        </div>
+
+        <div class="tab-panel" data-panel="desktop:mac" hidden>
+          <ol class="steps">
+            <li><span class="t">Acesse claude.ai/download</span><span class="d"><a href="https://claude.ai/download" target="_blank" rel="noopener noreferrer">claude.ai/download</a></span></li>
+            <li><span class="t">Baixe a versão para macOS</span></li>
+            <li><span class="t">Abra o arquivo .dmg baixado</span></li>
+            <li><span class="t">Arraste o ícone do Claude para a pasta Aplicativos</span></li>
+            <li><span class="t">Abra o app</span></li>
+          </ol>
+        </div>
+
+        <h3>Login com link de verificação</h3>
+        <p>Na primeira vez que abrir o app, faça login com a mesma conta do Claude Pro.</p>
+
         <div class="callout callout-warn">
-          <span class="callout-title">Só para Mac com chip Apple (M1 ou mais novo)</span>
-          Para saber o seu: menu Apple (canto superior esquerdo) → <strong>Sobre Este Mac</strong>. Se aparecer <strong>Intel</strong>, o app não serve. Nesse caso, use o Codex pelo terminal (etapa 6) ou siga o caminho principal com o Claude.
+          <span class="callout-title">Confira o seu e-mail</span>
+          O Claude manda um <strong>link de verificação para o seu e-mail</strong> para validar o login. Abra o e-mail (no mesmo computador onde instalou o app) e clique no link. Sem isso, o login não termina. Não chegou em 1 ou 2 minutos? Confira a caixa de spam.
+        </div>
+
+        <div class="callout callout-ok">
+          <span class="callout-title">Pronto quando</span>
+          O app abre, você está logado e vê as abas no topo: <strong>Início</strong> e <strong>Code</strong>.
+        </div>
+
+        <div class="callout callout-tip">
+          <span class="callout-title">Travou? Consulte o Playbook Claude</span>
+          A Expert mantém uma base de soluções para os problemas mais comuns do Claude: <a href="https://playbookclaude.expertintegrado.com.br" target="_blank" rel="noopener noreferrer"><strong>playbookclaude.expertintegrado.com.br</strong></a>.
         </div>
       </div>
 
-      <h3>3. Entrar e abrir o Codex</h3>
-      <ol class="steps">
-        <li><span class="t">Faça login com a sua conta do ChatGPT</span><span class="d">A mesma conta do plano que você conferiu acima.</span></li>
-        <li><span class="t">Escolha "Codex"</span><span class="d">O app tem dois modos, ChatGPT e Codex. Para o evento, use o <strong>Codex</strong>.</span></li>
-        <li><span class="t">Abra uma pasta para trabalhar</span><span class="d">Crie uma pasta vazia no computador (ex.: <code>Imersao</code>) e selecione ela no app. O Codex trabalha com os arquivos dessa pasta.</span></li>
-      </ol>
+      <div class="tab-panel" data-panel="ia:codex" hidden>
+        <p>O Codex vem dentro do aplicativo do ChatGPT para computador.</p>
 
-      <div class="callout callout-ok">
-        <span class="callout-title">Pronto quando</span>
-        O app abre, você está logado com a conta do ChatGPT e consegue começar uma conversa no modo <strong>Codex</strong> com a sua pasta selecionada.
+        <h3>Como instalar</h3>
+        <div class="tabs" data-tabs="codexapp" role="tablist">
+          <button class="tab active" data-tab="win" type="button">Windows</button>
+          <button class="tab" data-tab="mac" type="button">Mac</button>
+        </div>
+
+        <div class="tab-panel" data-panel="codexapp:win">
+          <ol class="steps">
+            <li><span class="t">Baixe pela Microsoft Store</span><span class="d"><a href="https://get.microsoft.com/installer/download/9PLM9XGG6VKS?cid=website_cta_psi" target="_blank" rel="noopener noreferrer">Baixar o app para Windows</a> (link oficial da OpenAI, abre a Microsoft Store).</span></li>
+            <li><span class="t">Instale e abra o app</span><span class="d">Siga as telas da Store até concluir.</span></li>
+          </ol>
+          <div class="callout">
+            <span class="callout-title">Cuidado com apps parecidos na Store</span>
+            Procurar "Codex" direto na Store pode mostrar apps de outras empresas. Use o link acima.
+          </div>
+        </div>
+
+        <div class="tab-panel" data-panel="codexapp:mac" hidden>
+          <ol class="steps">
+            <li><span class="t">Baixe o app para Mac</span><span class="d"><a href="https://persistent.oaistatic.com/codex-app-prod/Codex.dmg">Baixar Codex.dmg</a> (link oficial da OpenAI).</span></li>
+            <li><span class="t">Abra o arquivo .dmg baixado</span></li>
+            <li><span class="t">Arraste o ícone para a pasta Aplicativos e abra o app</span></li>
+          </ol>
+          <div class="callout callout-warn">
+            <span class="callout-title">Só para Mac com chip Apple (M1 ou mais novo)</span>
+            Para saber o seu: menu Apple (canto superior esquerdo) → <strong>Sobre Este Mac</strong>. Se aparecer <strong>Intel</strong>, o app não serve. Nesse caso, siga pelo caminho do Claude (aba <strong>Claude Desktop</strong> acima e plano Claude Pro na etapa 1).
+          </div>
+        </div>
+
+        <h3>Entrar e abrir o Codex</h3>
+        <ol class="steps">
+          <li><span class="t">Faça login com a sua conta do ChatGPT</span><span class="d">A mesma conta do plano da etapa 1.</span></li>
+          <li><span class="t">Escolha "Codex"</span><span class="d">O app tem dois modos, ChatGPT e Codex. Para o evento, use o <strong>Codex</strong>.</span></li>
+          <li><span class="t">Abra uma pasta para trabalhar</span><span class="d">Crie uma pasta vazia no computador (ex.: <code>Imersao</code>) e selecione ela no app. O Codex trabalha com os arquivos dessa pasta.</span></li>
+        </ol>
+
+        <div class="callout callout-ok">
+          <span class="callout-title">Pronto quando</span>
+          O app abre, você está logado com a conta do ChatGPT e consegue começar uma conversa no modo <strong>Codex</strong> com a sua pasta selecionada.
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Etapa 4 -->
-<section id="lovable" class="step-section">
+<section id="voice-ai" class="step-section">
   <div class="step-inner">
     <div class="step-aside"><div class="big-n" aria-hidden="true">4</div></div>
     <div class="step-main">
-      <div class="section-label"><span class="tag">Etapa 4 · Recomendado</span><span class="tag">US$ 25/mês</span></div>
-      <h2>Lovable</h2>
-      <p class="lead">Plataforma para criar aplicativos web sem programar. Você descreve o que quer em português (<em>"um app que recebe pedidos pelo WhatsApp e organiza por status"</em>) e a IA constrói.</p>
-      <p>É 100% pelo navegador. Não precisa instalar nada, só criar conta e contratar o plano.</p>
-
-      <div class="callout callout-tip">
-        <span class="callout-title">Qual plano contratar?</span>
-        <strong>Pro (US$ 25/mês)</strong> é o recomendado: 100 créditos/mês + 5 por dia, domínio próprio e sem o selo do Lovable. O Free só tem 5 créditos por dia e acaba nos primeiros exercícios.
-      </div>
-
-      <h3>Como contratar</h3>
-      <ol class="steps">
-        <li><span class="t">Acesse o link de convite</span><span class="d"><a href="https://lovable.dev/?via=ericluciano" target="_blank" rel="noopener noreferrer">lovable.dev</a></span></li>
-        <li><span class="t">Clique em "Get started" / "Começar grátis"</span></li>
-        <li><span class="t">Crie a conta com Google ou e-mail</span></li>
-        <li><span class="t">Ative o plano Pro</span><span class="d">No painel, vá em <strong>Settings</strong> → <strong>Plans</strong> e ative o <strong>Pro</strong>.</span></li>
-      </ol>
-
-      <div class="callout callout-ok">
-        <span class="callout-title">Pronto quando</span>
-        Você entra em <strong>lovable.dev</strong>, vê o painel com a opção de criar um projeto novo, e o seu plano mostra <strong>Pro</strong> nas configurações.
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Etapa 5 -->
-<section id="voice-ai" class="step-section">
-  <div class="step-inner">
-    <div class="step-aside"><div class="big-n" aria-hidden="true">5</div></div>
-    <div class="step-main">
-      <div class="section-label"><span class="tag">Etapa 5 · Recomendado</span><span class="tag tag-free">Gratuito</span></div>
+      <div class="section-label"><span class="tag tag-req">Etapa 4 · Obrigatório</span><span class="tag tag-free">Gratuito</span></div>
       <h2>Voice AI</h2>
       <p class="lead">Aplicativo da Expert Integrado para transcrever a sua voz com IA. Você aperta um atalho do teclado, fala, e o texto aparece onde o cursor estiver, em qualquer programa do Windows.</p>
 
@@ -645,72 +593,6 @@ ul.plain li { margin: 0.3rem 0; }
   </div>
 </section>
 
-<!-- Etapa 6 -->
-<section id="claude-code" class="step-section">
-  <div class="step-inner">
-    <div class="step-aside"><div class="big-n" aria-hidden="true">6</div></div>
-    <div class="step-main">
-      <div class="section-label"><span class="tag">Etapa 6 · Opcional</span><span class="tag">Incluso no plano</span></div>
-      <h2>Agente no terminal</h2>
-
-      <div class="callout callout-warn">
-        <span class="callout-title">Você provavelmente não precisa disto</span>
-        Para quase todos os participantes, o app da etapa 3 (ou o app do Codex) já resolve. Só siga aqui se você já tem familiaridade com o terminal e quer rodar o agente direto pela linha de comando.
-      </div>
-
-      <p class="muted">Pré-requisito: o Node.js da <strong>etapa 2</strong>. Se pulou, volte lá antes de continuar.</p>
-
-      <h3>Escolha o seu agente</h3>
-      <div class="tabs tabs-big" data-tabs="agent" role="tablist">
-        <button class="tab active" data-tab="claude" type="button">Claude Code</button>
-        <button class="tab" data-tab="codex" type="button">Codex (ChatGPT)</button>
-      </div>
-
-      <div class="tab-panel" data-panel="agent:claude">
-        <h3>Instalar o Claude Code</h3>
-        <div class="tabs" data-tabs="cc" role="tablist">
-          <button class="tab active" data-tab="unix" type="button">Mac / Linux</button>
-          <button class="tab" data-tab="win" type="button">Windows (PowerShell)</button>
-        </div>
-        <div class="tab-panel" data-panel="cc:unix"><div class="code"><pre>curl -fsSL https://claude.ai/install.sh | bash</pre></div></div>
-        <div class="tab-panel" data-panel="cc:win" hidden><div class="code"><pre>irm https://claude.ai/install.ps1 | iex</pre></div></div>
-
-        <h3>Conferir</h3>
-        <p>Feche e abra o terminal de novo e rode:</p>
-        <div class="code"><pre>claude --version</pre></div>
-        <p class="muted">Se aparecer um número de versão, está pronto.</p>
-
-        <div class="callout callout-tip">
-          <span class="callout-title">Travou? Consulte o Playbook Claude</span>
-          Base de soluções da Expert para os problemas mais comuns: <a href="https://playbookclaude.expertintegrado.com.br" target="_blank" rel="noopener noreferrer"><strong>playbookclaude.expertintegrado.com.br</strong></a>.
-        </div>
-      </div>
-
-      <div class="tab-panel" data-panel="agent:codex" hidden>
-        <h3>Instalar o Codex CLI</h3>
-        <div class="tabs" data-tabs="cx" role="tablist">
-          <button class="tab active" data-tab="unix" type="button">Mac / Linux</button>
-          <button class="tab" data-tab="win" type="button">Windows (PowerShell)</button>
-        </div>
-        <div class="tab-panel" data-panel="cx:unix"><div class="code"><pre>curl -fsSL https://chatgpt.com/codex/install.sh | sh</pre></div></div>
-        <div class="tab-panel" data-panel="cx:win" hidden><div class="code"><pre>powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"</pre></div></div>
-
-        <h3>Entrar com a conta do ChatGPT</h3>
-        <ol class="steps">
-          <li><span class="t">Feche e abra o terminal de novo e rode o comando abaixo</span>
-            <div class="code"><pre>codex</pre></div></li>
-          <li><span class="t">Escolha "Sign in with ChatGPT"</span><span class="d">O navegador abre para você entrar com a conta do ChatGPT. Depois volte ao terminal.</span></li>
-        </ol>
-
-        <div class="callout callout-ok">
-          <span class="callout-title">Pronto quando</span>
-          O Codex abre no terminal, já logado, esperando a sua primeira mensagem.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Checklist -->
 <section id="checklist" class="step-section">
   <div class="step-inner">
@@ -718,10 +600,9 @@ ul.plain li { margin: 0.3rem 0; }
     <div class="step-main">
       <h2>Checklist final</h2>
       <div class="checklist" id="final-checklist">
-        <label class="check-item"><input type="checkbox"><span>Claude Pro contratado e logado em claude.ai <em>(ou ChatGPT Plus+, no caminho Codex)</em></span></label>
+        <label class="check-item"><input type="checkbox"><span>Claude Pro contratado e logado em claude.ai <em>(ou ChatGPT Plus ou superior, no caminho Codex)</em></span></label>
         <label class="check-item"><input type="checkbox"><span>Computador preparado: Git e Node.js instalados</span></label>
-        <label class="check-item"><input type="checkbox"><span>Claude Desktop instalado e logado, mostrando as abas Início e Code <em>(ou app do Codex logado)</em></span></label>
-        <label class="check-item"><input type="checkbox"><span>Lovable Pro contratado e conta logada</span></label>
+        <label class="check-item"><input type="checkbox"><span>Claude Desktop instalado e logado, mostrando as abas Início e Code <em>(ou app do Codex logado, com uma pasta aberta)</em></span></label>
         <label class="check-item"><input type="checkbox"><span>Voice AI instalado e atalho configurado (ou alternativa para Mac)</span></label>
       </div>
     </div>
@@ -749,13 +630,13 @@ themeBtn.addEventListener("click", function () {
   syncThemeIcon();
 });
 
-// Abas (Mac/Windows, Claude/Codex)
+// Abas (Mac/Windows, Claude/Codex). Barras com o mesmo data-tabs andam juntas:
+// escolher Codex na etapa 1 já mostra o app do Codex na etapa 3.
 document.querySelectorAll(".tabs .tab").forEach(function (tab) {
   tab.addEventListener("click", function () {
-    var bar = tab.closest(".tabs");
-    var group = bar.getAttribute("data-tabs");
+    var group = tab.closest(".tabs").getAttribute("data-tabs");
     var choice = tab.getAttribute("data-tab");
-    bar.querySelectorAll(".tab").forEach(function (t) { t.classList.toggle("active", t === tab); });
+    document.querySelectorAll('.tabs[data-tabs="' + group + '"] .tab').forEach(function (t) { t.classList.toggle("active", t.getAttribute("data-tab") === choice); });
     document.querySelectorAll('[data-panel^="' + group + ':"]').forEach(function (p) {
       p.hidden = p.getAttribute("data-panel") !== group + ":" + choice;
     });
@@ -769,6 +650,9 @@ if (/Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)) {
     if (b) b.click();
   });
 }
+
+// Link antigo #codex: abre direto o caminho do Codex
+if (location.hash === "#codex") document.querySelector('.tabs[data-tabs="ia"] [data-tab="codex"]').click();
 
 // Botão de copiar nos blocos de código
 document.querySelectorAll(".code").forEach(function (box) {
@@ -799,7 +683,7 @@ function fallback(text) {
 }
 
 // Checklist com memória neste navegador
-var CHECKLIST_KEY = "guia-instalacao-checklist-v1";
+var CHECKLIST_KEY = "guia-instalacao-checklist-v2";
 var checks = document.querySelectorAll("#final-checklist input[type=checkbox]");
 try {
   var saved = JSON.parse(localStorage.getItem(CHECKLIST_KEY) || "[]");
