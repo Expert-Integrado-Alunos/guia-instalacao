@@ -556,7 +556,7 @@ ul.plain li { margin: 0.3rem 0; }
       <p class="muted">Na maior parte dos casos, o modo <strong>Local</strong> é suficiente.</p>
       <ul class="plain">
         <li><strong>Local:</strong> roda no seu computador, sem internet. Gratuito. Recomendado para PCs com 8 GB de RAM ou mais.</li>
-        <li><strong>Online:</strong> usa a API da OpenAI (centavos por minuto). Precisa de chave de API e saldo na conta da OpenAI. Não sabe criar a chave? Siga o <a href="https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key" target="_blank" rel="noopener noreferrer">tutorial oficial da OpenAI</a>.</li>
+        <li><strong>Online:</strong> mais rápido, usa a internet. Precisa de uma chave: <strong>grátis da Groq</strong> (recomendada, passo a passo abaixo) ou paga da OpenAI (centavos por minuto, <a href="https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key" target="_blank" rel="noopener noreferrer">tutorial oficial da OpenAI</a>).</li>
       </ul>
 
       <h3>Como instalar (Windows)</h3>
@@ -583,11 +583,24 @@ ul.plain li { margin: 0.3rem 0; }
         O app está instalado, o atalho de teclado está configurado, e ao apertar e falar o texto aparece onde o cursor está.
       </div>
 
-      <h3>Alternativas para Mac</h3>
-      <p>Até o Voice AI chegar ao Mac, use uma destas:</p>
+      <h3>Opcional: deixe mais rápido com a chave grátis da Groq</h3>
+      <p>A Groq é um serviço de IA com plano gratuito (sem cartão) que transcreve muito rápido. Você cria uma chave nela e cola no Voice AI.</p>
+      <ol class="steps">
+        <li><span class="t">Crie sua conta na Groq</span><span class="d">Acesse <a href="https://console.groq.com" target="_blank" rel="noopener noreferrer">console.groq.com</a> e crie sua conta. O plano Free é gratuito.</span></li>
+        <li><span class="t">Gere a chave</span><span class="d">Abra <a href="https://console.groq.com/keys" target="_blank" rel="noopener noreferrer">API Keys</a>, clique em <strong>Create API Key</strong>, dê um nome (ex.: Voice AI) e copie a chave. Ela começa com <strong>gsk_</strong>. Copie na hora: se perder, é só criar outra.</span></li>
+        <li><span class="t">Cole no Voice AI</span><span class="d">No Voice AI, vá em <strong>Configurações</strong>, cole no campo <strong>Chave (Groq ou OpenAI)</strong> e clique em <strong>Salvar chave</strong>.</span></li>
+        <li><span class="t">Ligue o modo Online</span><span class="d">Em <strong>Transcrição</strong> → <strong>Onde transcrever</strong>, escolha <strong>Online (Groq ou OpenAI)</strong>.</span></li>
+      </ol>
+      <div class="callout callout-warn">
+        <span class="callout-title">A chave é pessoal</span>
+        Funciona como uma senha: não mande por WhatsApp, não poste e não mostre em print. Se vazar, apague a chave em API Keys na Groq e crie outra.
+      </div>
+      <p class="muted">Não achou o campo de chave? Atualize o Voice AI para a versão mais recente.</p>
+
+      <h3>Alternativa para Mac</h3>
+      <p>Até o Voice AI chegar ao Mac, use o <strong>Handy</strong>: gratuito, de código aberto e roda no seu computador, sem internet. Mesma ideia: aperta o atalho, fala, e o texto aparece onde o cursor estiver.</p>
       <ul class="plain">
-        <li><a href="https://wisprflow.ai" target="_blank" rel="noopener noreferrer">Wispr Flow (wisprflow.ai)</a></li>
-        <li><a href="https://superwhisper.com" target="_blank" rel="noopener noreferrer">Superwhisper (superwhisper.com)</a></li>
+        <li><a href="https://handy.computer" target="_blank" rel="noopener noreferrer">Baixar o Handy (handy.computer)</a></li>
       </ul>
     </div>
   </div>
