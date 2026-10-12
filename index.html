@@ -591,13 +591,13 @@ ul.plain li { margin: 0.3rem 0; }
       <h3>Requisitos</h3>
       <ul class="plain">
         <li><strong>Windows:</strong> Windows 10 ou 11, 64 bits.</li>
-        <li><strong>Mac:</strong> Mac com chip Apple (M1 ou mais novo). Para conferir: menu Apple (canto superior esquerdo) → <strong>Sobre Este Mac</strong>. Se aparecer <strong>Intel</strong>, o Voice AI não roda nesse Mac.</li>
+        <li><strong>Mac:</strong> Mac com chip Apple (M1 ou mais novo). Para conferir: menu Apple (canto superior esquerdo) → <strong>Sobre Este Mac</strong>. Se aparecer <strong>Intel</strong>, o Voice AI não roda nesse Mac: veja a opção do Handy em <a href="#handy">Computador mais antigo?</a>, no fim desta etapa.</li>
       </ul>
 
       <h3>Modos de transcrição</h3>
       <p class="muted">Na maior parte dos casos, o modo <strong>Local</strong> é suficiente.</p>
       <ul class="plain">
-        <li><strong>Local:</strong> roda no seu computador, sem internet. Gratuito. Recomendado para PCs com 8 GB de RAM ou mais.</li>
+        <li><strong>Local:</strong> roda no seu computador, sem internet. Gratuito. Recomendado para computadores com 8 GB de RAM ou mais.</li>
         <li><strong>Online:</strong> mais rápido, usa a internet. Precisa de uma chave: <strong>grátis da Groq</strong> (recomendada, passo a passo abaixo) ou paga da OpenAI (centavos por minuto, <a href="https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key" target="_blank" rel="noopener noreferrer">tutorial oficial da OpenAI</a>).</li>
       </ul>
 
@@ -704,9 +704,10 @@ ul.plain li { margin: 0.3rem 0; }
         <span class="callout-title">Pronto quando</span>
         O app está instalado e, ao apertar o atalho (<strong>Ctrl + Alt + S</strong> no Windows, <strong>Ctrl + Option + S</strong> no Mac), falar e apertar de novo, o texto aparece onde o cursor está.
       </div>
+      <p class="muted">Quando os 30 dias de teste acabam, o app pede um código de ativação: quem libera é a equipe da Expert Integrado, e na mesma tela do app tem um botão para falar com a equipe (<a href="https://voiceai.expertintegrado.com.br/#perguntas" target="_blank" rel="noopener noreferrer">perguntas do site do Voice AI</a>).</p>
 
       <h3>Opcional: deixe mais rápido com a chave grátis da Groq</h3>
-      <p>A Groq é um serviço de IA com plano gratuito (sem cartão) que transcreve muito rápido. Você cria uma chave nela e cola no Voice AI.</p>
+      <p>A Groq é um serviço de IA com plano gratuito (sem cartão) que transcreve muito rápido. Você cria uma chave nela e cola no Voice AI. Vale para Windows e Mac.</p>
       <ol class="steps">
         <li><span class="t">Crie sua conta na Groq</span><span class="d">Acesse <a href="https://console.groq.com" target="_blank" rel="noopener noreferrer">console.groq.com</a> e crie sua conta. O plano Free é gratuito.</span></li>
         <li><span class="t">Gere a chave</span><span class="d">Abra <a href="https://console.groq.com/keys" target="_blank" rel="noopener noreferrer">API Keys</a>, clique em <strong>Create API Key</strong>, dê um nome (ex.: Voice AI) e copie a chave. Ela começa com <strong>gsk_</strong>. Copie na hora: se perder, é só criar outra.</span></li>
@@ -718,6 +719,12 @@ ul.plain li { margin: 0.3rem 0; }
         Funciona como uma senha: não mande por WhatsApp, não poste e não mostre em print. Se vazar, apague a chave em API Keys na Groq e crie outra.
       </div>
       <p class="muted">Não achou o campo de chave? Atualize o Voice AI para a versão mais recente.</p>
+
+      <div class="callout" id="handy">
+        <span class="callout-title">Computador mais antigo?</span>
+        Se o seu Mac é Intel ou o Voice AI não rodar no seu computador, use o <strong>Handy</strong>: gratuito, de código aberto e roda no seu computador, sem internet. Mesma ideia: aperta o atalho, fala, e o texto aparece onde o cursor estiver.
+        <p><a href="https://handy.computer" target="_blank" rel="noopener noreferrer">Baixar o Handy (handy.computer)</a></p>
+      </div>
     </div>
   </div>
 </section>
@@ -732,7 +739,7 @@ ul.plain li { margin: 0.3rem 0; }
         <label class="check-item"><input type="checkbox"><span>Claude Pro contratado e logado em claude.ai <em>(ou ChatGPT Plus ou superior, no caminho Codex)</em></span></label>
         <label class="check-item"><input type="checkbox"><span>Computador preparado: Git e Node.js instalados</span></label>
         <label class="check-item"><input type="checkbox"><span>Claude Desktop instalado e logado, mostrando as abas Início e Code <em>(ou app do Codex logado, com uma pasta aberta)</em></span></label>
-        <label class="check-item"><input type="checkbox"><span>Voice AI instalado e atalho funcionando</span></label>
+        <label class="check-item"><input type="checkbox"><span>Voice AI instalado e atalho funcionando <em>(ou Handy, em computador mais antigo)</em></span></label>
       </div>
     </div>
   </div>
