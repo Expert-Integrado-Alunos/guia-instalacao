@@ -207,6 +207,11 @@ code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.85em
 .callout-ok .callout-title::before { content: "✓ "; }
 .callout ol { padding-left: 1.25rem; margin: 0.4rem 0 0; }
 
+/* Vídeo do passo a passo (player do Smart Player) */
+.video { margin: 1.2rem 0 1.5rem; }
+.video-frame { position: relative; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; border: 1px solid var(--outline-strong); background: #000; }
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-cap { margin-top: 0.5rem; font-size: 0.9rem; color: var(--muted); }
 
 /* Tabs */
 .tabs { display: inline-flex; flex-wrap: wrap; background: var(--surface-high); border: 1px solid var(--outline); border-radius: 12px; padding: 4px; margin: 0.25rem 0 1rem; gap: 4px; max-width: 100%; }
@@ -332,6 +337,10 @@ ul.plain li { margin: 0.3rem 0; }
       <div class="section-label"><span class="tag tag-req">Etapa 1 · Obrigatório</span><span class="tag">Plano pago</span></div>
       <h2>Contratação do Claude ou do Codex</h2>
       <p class="lead">Você vai precisar de uma IA para usar o dia inteiro: conversar, gerar conteúdo, analisar planilhas, montar processos e construir o seu assistente com memória da empresa. Escolha <strong>um</strong> dos dois caminhos.</p>
+      <figure class="video">
+        <div class="video-frame"><iframe src="https://player.scaleup.com.br/embed/007051c7acef8b5cd007d23860475e27363ee2e8" title="Vídeo: como contratar o Claude Pro ou o ChatGPT Plus" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe></div>
+        <figcaption class="video-cap">Vídeo passo a passo (2:37): Claude Pro e, a partir de 1:39, ChatGPT Plus para quem vai usar o Codex.</figcaption>
+      </figure>
 
       <div class="tabs tabs-big" id="codex" data-tabs="ia" role="tablist">
         <button class="tab active" data-tab="claude" type="button">Claude</button>
@@ -343,25 +352,26 @@ ul.plain li { margin: 0.3rem 0; }
 
         <div class="callout callout-tip">
           <span class="callout-title">Qual plano contratar?</span>
-          <strong>Pro (~US$ 20/mês, cerca de R$ 90)</strong> é o recomendado. Atende o dia inteiro, libera o Claude Code e tem limite de uso suficiente. O <em>Free</em> tem limite muito baixo, e o <em>Max</em> só vale se você usa muito no dia a dia.
+          <strong>Pro</strong> é o recomendado: <strong>US$ 20 por mês</strong>, ou US$ 17 por mês no plano anual, mais impostos. Atende o dia inteiro, já inclui o Claude Code e tem limite de uso suficiente. O <em>Free</em> tem limite muito baixo, e o <em>Max</em> só vale se você usa muito no dia a dia.
         </div>
 
         <h3>Como contratar</h3>
         <ol class="steps">
           <li><span class="t">Acesse claude.ai</span><span class="d">Abra <a href="https://claude.ai" target="_blank" rel="noopener noreferrer">claude.ai</a> no navegador.</span></li>
-          <li><span class="t">Crie sua conta</span><span class="d">Use o e-mail principal da empresa.</span></li>
-          <li><span class="t">Faça login e abra Settings</span><span class="d">Clique no seu nome no canto inferior esquerdo → <strong>Settings</strong> → <strong>Plans</strong>.</span></li>
-          <li><span class="t">Selecione o plano Pro</span><span class="d">Finalize com cartão de crédito.</span></li>
+          <li><span class="t">Crie sua conta</span><span class="d">Entre com o Google, com a Apple ou com o e-mail principal da empresa.</span></li>
+          <li><span class="t">Confirme o celular</span><span class="d">Na primeira vez, o Claude manda um código de 6 dígitos por SMS. Número virtual ou telefone fixo não serve.</span></li>
+          <li><span class="t">Abra Configurações → Faturamento</span><span class="d">Clique no seu nome no canto inferior esquerdo → <strong>Configurações</strong> → <strong>Faturamento</strong>.</span></li>
+          <li><span class="t">Assine o Pro</span><span class="d">Clique em <strong>Atualizar plano</strong> → <strong>Obter plano Pro</strong>, escolha mensal ou anual, coloque os dados do cartão e clique em <strong>Inscrever-se</strong>.</span></li>
         </ol>
 
         <div class="callout callout-warn">
-          <span class="callout-title">Pagamento em dólar</span>
-          O valor cai no cartão como compra internacional (com IOF e câmbio do dia). Você pode cancelar a qualquer momento, sem multa.
+          <span class="callout-title">Cobrança no cartão</span>
+          Se a cobrança vier em dólar, ela cai no cartão como compra internacional (com IOF e câmbio do dia). Você pode cancelar a qualquer momento, sem multa, em <strong>Configurações → Faturamento</strong>.
         </div>
 
         <div class="callout callout-ok">
           <span class="callout-title">Pronto quando</span>
-          Você entra em <strong>claude.ai</strong>, faz login, e o selo ao lado do seu nome mostra <strong>Pro</strong>.
+          Em <strong>claude.ai</strong>, no seu nome → <strong>Configurações</strong> → <strong>Faturamento</strong>, o seu plano aparece como <strong>Pro</strong>.
         </div>
       </div>
 
@@ -375,13 +385,13 @@ ul.plain li { margin: 0.3rem 0; }
 
         <div class="callout callout-tip">
           <span class="callout-title">Qual plano contratar?</span>
-          O Codex vem nos planos do ChatGPT, inclusive no gratuito, mas no <em>Free</em> e no <em>Go</em> o uso é mais limitado. Para acompanhar o dia inteiro, use o <strong>Plus</strong> ou superior.
+          O Codex vem nos planos do ChatGPT, inclusive no gratuito, mas no <em>Free</em> e no <em>Go</em> o uso é mais limitado. Para acompanhar o dia inteiro, use o <strong>Plus</strong> ou superior. No Brasil, o Plus custa <strong>R$ 99,90 por mês</strong> (só tem plano mensal).
         </div>
 
         <h3>Como contratar</h3>
         <ol class="steps">
-          <li><span class="t">Acesse chatgpt.com e faça login</span><span class="d"><a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">chatgpt.com</a>. Se ainda não tem conta, crie com o e-mail principal da empresa.</span></li>
-          <li><span class="t">Confira ou contrate o plano</span><span class="d">Veja os planos e valores em <a href="https://chatgpt.com/pricing" target="_blank" rel="noopener noreferrer">chatgpt.com/pricing</a>.</span></li>
+          <li><span class="t">Acesse chatgpt.com e entre</span><span class="d"><a href="https://chatgpt.com" target="_blank" rel="noopener noreferrer">chatgpt.com</a>. Se ainda não tem conta, clique em <strong>Cadastre-se grátis</strong> e use o e-mail principal da empresa.</span></li>
+          <li><span class="t">Assine o Plus</span><span class="d">Clique no ícone do seu perfil → <strong>Atualizar plano</strong> → <strong>Obter Plus</strong>, coloque os dados do cartão e confirme a assinatura. Planos e valores em <a href="https://chatgpt.com/pricing" target="_blank" rel="noopener noreferrer">chatgpt.com/pricing</a>.</span></li>
         </ol>
 
         <div class="callout callout-ok">
@@ -401,6 +411,10 @@ ul.plain li { margin: 0.3rem 0; }
       <div class="section-label"><span class="tag tag-req">Etapa 2 · Obrigatório</span><span class="tag tag-free">Gratuito</span></div>
       <h2>Preparar o Computador</h2>
       <p class="lead">Antes de instalar o app da etapa 3, instale duas ferramentas de apoio gratuitas: o <strong>Git</strong> e o <strong>Node.js</strong>. Leva cerca de 10 minutos e evita travas durante o evento.</p>
+      <figure class="video">
+        <div class="video-frame"><iframe src="https://player.scaleup.com.br/embed/1ce7fa7d4e78feb00a05bc16b365d73922177c61" title="Vídeo: como instalar o Git e o Node.js" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe></div>
+        <figcaption class="video-cap">Vídeo passo a passo (3:13): Windows e, a partir de 1:58, Mac.</figcaption>
+      </figure>
 
       <div class="callout callout-tip">
         <span class="callout-title">Por que preciso disso?</span>
@@ -481,6 +495,10 @@ ul.plain li { margin: 0.3rem 0; }
 
       <div class="tab-panel" data-panel="ia:claude">
         <p>O aplicativo oficial da Anthropic para Mac e Windows. Já vem com o <strong>Claude Code</strong> numa aba própria.</p>
+        <figure class="video">
+          <div class="video-frame"><iframe src="https://player.scaleup.com.br/embed/716ac06deff4f1c82c01d2e651bb22d5616796f7" title="Vídeo: como instalar o Claude Desktop" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe></div>
+          <figcaption class="video-cap">Vídeo passo a passo (2:37): Windows e, a partir de 1:33, Mac.</figcaption>
+        </figure>
 
         <h3>Como instalar</h3>
         <div class="tabs" data-tabs="desktop" role="tablist">
@@ -582,6 +600,10 @@ ul.plain li { margin: 0.3rem 0; }
       <div class="section-label"><span class="tag tag-req">Etapa 4 · Obrigatório</span><span class="tag tag-free">Gratuito</span></div>
       <h2>Voice AI</h2>
       <p class="lead">Aplicativo da Expert Integrado para transcrever a sua voz com IA. Você aperta um atalho do teclado, fala, e o texto aparece onde o cursor estiver, em qualquer programa do Windows ou do Mac.</p>
+      <figure class="video">
+        <div class="video-frame"><iframe src="https://player.scaleup.com.br/embed/a56394e9e7d86bf60e53e62ff89bf0e34d0a2b35" title="Vídeo: como instalar o Voice AI" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen></iframe></div>
+        <figcaption class="video-cap">Vídeo passo a passo (6:21): Windows, Mac a partir de 2:28 e o modo Online (opcional) a partir de 4:15.</figcaption>
+      </figure>
 
       <div class="callout callout-tip">
         <span class="callout-title">Um presente para quem participa da imersão</span>
@@ -707,7 +729,7 @@ ul.plain li { margin: 0.3rem 0; }
       <p class="muted">Quando os 30 dias de teste acabam, o app pede um código de ativação: quem libera é a equipe da Expert Integrado, e na mesma tela do app tem um botão para falar com a equipe (<a href="https://voiceai.expertintegrado.com.br/#perguntas" target="_blank" rel="noopener noreferrer">perguntas do site do Voice AI</a>).</p>
 
       <h3>Opcional: deixe mais rápido com a chave grátis da Groq</h3>
-      <p>A Groq é um serviço de IA com plano gratuito (sem cartão) que transcreve muito rápido. Você cria uma chave nela e cola no Voice AI. Vale para Windows e Mac.</p>
+      <p>A Groq é um serviço de IA com plano gratuito (sem cartão) que transcreve muito rápido. Você cria uma chave nela e cola no Voice AI. Vale para Windows e Mac. O vídeo do topo desta etapa mostra o passo a passo, com a chave da Groq e a da OpenAI, a partir de 4:15.</p>
       <ol class="steps">
         <li><span class="t">Crie sua conta na Groq</span><span class="d">Acesse <a href="https://console.groq.com" target="_blank" rel="noopener noreferrer">console.groq.com</a> e crie sua conta. O plano Free é gratuito.</span></li>
         <li><span class="t">Gere a chave</span><span class="d">Abra <a href="https://console.groq.com/keys" target="_blank" rel="noopener noreferrer">API Keys</a>, clique em <strong>Create API Key</strong>, dê um nome (ex.: Voice AI) e copie a chave. Ela começa com <strong>gsk_</strong>. Copie na hora: se perder, é só criar outra.</span></li>
